@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge - Anti-Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Challenge</h1>
+        <nav>
+            <a href="dashboard.html" class="btn">Back to Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="challenge-container">
+            <div id="challengeDetails">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <div id="challengeWorkspace">
+                <div class="workspace-header">
+                    <h2>Your Workspace</h2>
+                    <div class="workspace-tabs">
+                        <button class="tab-btn active" data-tab="instructions">Instructions</button>
+                        <button class="tab-btn" data-tab="editor">Code Editor</button>
+                        <button class="tab-btn" data-tab="preview">Preview</button>
+                    </div>
+                </div>
+                
+                <div id="instructions" class="workspace-tab active">
+                    <!-- Challenge instructions -->
+                </div>
+                
+                <div id="editor" class="workspace-tab">
+                    <div class="code-editor">
+                        <div class="editor-toolbar">
+                            <select id="languageSelect">
+                                <option value="html">HTML</option>
+                                <option value="css">CSS</option>
+                                <option value="javascript">JavaScript</option>
+                            </select>
+                            <button id="runCode" class="btn primary">Run Code</button>
+                        </div>
+                        <textarea id="codeInput" spellcheck="false"></textarea>
+                    </div>
+                </div>
+                
+                <div id="preview" class="workspace-tab">
+                    <iframe id="codePreview"></iframe>
+                </div>
+            </div>
+            
+            <div id="submissionSection" class="submission-section">
+                <h2>Submit Your Solution</h2>
+                <form id="submitSolutionForm">
+                    <div class="form-group">
+                        <label for="solutionLink">Solution URL (GitHub, CodePen, etc.)</label>
+                        <input type="url" id="solutionLink" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="solutionNotes">Notes (optional)</label>
+                        <textarea id="solutionNotes" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Submit Solution</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src=.storage.jss"></script>
+    <script src="auth.js"></script>
+    <script src="challenge.js"></script>
+</body>
+</html>

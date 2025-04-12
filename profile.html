@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile - Anti-Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Your Profile</h1>
+        <nav>
+            <a href="dashboard.html" class="btn">Back to Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-info">
+                <h2 id="profileName"></h2>
+                <p id="profileEmail"></p>
+                <p id="profileType"></p>
+            </div>
+            
+            <div class="profile-actions">
+                <h3>Account Settings</h3>
+                <form id="updateProfileForm">
+                    <div class="form-group">
+                        <label for="updateName">Name</label>
+                        <input type="text" id="updateName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updatePassword">New Password (leave blank to keep current)</label>
+                        <input type="password" id="updatePassword">
+                    </div>
+                    <button type="submit" class="btn primary">Update Profile</button>
+                </form>
+            </div>
+            
+            <div id="userStats" class="user-stats">
+                <!-- Filled differently for candidates/employers -->
+            </div>
+        </div>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="auth.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

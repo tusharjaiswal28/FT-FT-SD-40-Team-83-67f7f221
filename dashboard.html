@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Anti-Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome, <span id="userName"></span></h1>
+        <nav>
+            <button id="logoutBtn" class="btn">Logout</button>
+            <a href="post-job.html" id="postJobBtn" class="btn primary">Post a Challenge</a>
+            <a href="profile.html" class="btn">My Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filter-section">
+            <h2>Available Challenges</h2>
+            <div class="filters">
+                <select id="skillFilter">
+                    <option value="">All Skills</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Node.js">Node.js</option>
+                    <option value="API Design">API Design</option>
+                    <option value="UI Design">UI Design</option>
+                </select>
+                <select id="difficultyFilter">
+                    <option value="">Any Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </section>
+        
+        <div id="jobListings" class="job-listings">
+            <!-- Jobs will be loaded here by JavaScript -->
+        </div>
+
+        <section class="hardcoded-challenges">
+            <h3>Featured Challenges</h3>
+            <div class="job-listings">
+                <!-- Hardcoded challenges will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="auth.js"></script>
+    <script src="jobs.js"></script>
+    
+    <script>
+        // Handle challenge button clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('start-challenge-btn')) {
+                const challengeId = e.target.dataset.challengeId;
+                window.location.href = `challenge.html?id=${challengeId}`;
+            }
+        });
+    </script>
+</body>
+</html>
